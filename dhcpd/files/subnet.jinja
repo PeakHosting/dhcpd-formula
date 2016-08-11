@@ -58,6 +58,12 @@
 {%- if config.has_key('default_lease_time') %}
 {{ intendation }}  default-lease-time {{ config['default_lease_time'] }};
 {%- endif %}
+{%- if config.has_key('ddns_domainname') %}
+{{ intendation }}  ddns-domainname "{{ config['ddns_domainname'] }}";
+{%- endif %}
+{%- if config.has_key('ddns_rev_domainname') %}
+{{ intendation }}  ddns-rev-domainname "{{ config['ddns_rev_domainname'] }}";
+{%- endif %}
 {%- if config.has_key('max_lease_time') %}
 {{ intendation }}  max-lease-time {{ config['max_lease_time'] }};
 {%- endif %}
